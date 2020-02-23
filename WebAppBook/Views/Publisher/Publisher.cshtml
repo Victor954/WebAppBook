@@ -1,0 +1,22 @@
+﻿@using WebAppBook.Models
+@foreach (Publisher b in @ViewBag.Table)
+{
+    <div class="col-lg-4" id="@b.Id">
+        <div class="box-many-main">
+            <a href="/Publisher/EditForm/@b.Id">Edit</a>
+            <span class="delete">X</span>
+            <hr />
+            <h2>@b.Name</h2>
+            <p>
+                @b.Info
+            </p>
+            <div class="base-box-genre">
+                @foreach (Book g in b.Books)
+                {
+                    <span class="box-genre">@g.Name</span>
+                }
+            </div>
+        </div>
+    </div>
+}
+@Html.Partial("Pagination")

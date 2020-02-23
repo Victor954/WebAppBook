@@ -1,0 +1,297 @@
+﻿@using WebAppBook.Models;
+@{
+    ViewBag.Title = "Добавить книгу";
+}
+<div class="result-msg">
+    <span class="close-msg">X</span>
+    <p></p>
+</div>
+<div class="box-3">
+
+</div>
+<div class="row daun">
+    <div class="col-12"><h2 class="title-main">Прочее</h2></div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box-bg-form bd con-base-3">
+                    <h2>Установить перев</h2>
+                    <div class="input-group form-genre">
+                        <select name="Name" id="Form-Genre" class="form-control">
+                            @if (ViewBag.Translator != null)
+                            {
+                                <option>Выберите ФИО</option>
+                                foreach (Translator trans in ViewBag.Translator)
+                                {
+                                    <option id="@trans.Id">@trans.Name @trans.LastName @trans.PatronymicName</option>
+                                }
+                            }
+                        </select>
+                        <span class="data-born">Выберите ФИО</span>
+                    </div>
+
+                    <div class="box-fow" id="Genre-Box">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box-bg-form box-con3 base-form form-translator">
+                    <h2>Переводчики</h2>
+                    <div class="input-group form-genre">
+                        <input type="text" name="Genre" class="form-control add-genre-form-228" placeholder="ФИО" />
+                        <span class="data-born">Поиск перевод</span>
+                    </div>
+
+                    <div class="box-fow2">
+                        <div class="input-group mone">
+                            <input type="text" class="form-control add-genre-form" placeholder="ФИО" />
+                            <button class="btn btn-form add-genre-228">Добавить</button>
+                        </div>
+                        <div id="insert-request3">
+                            <div class="box-fow" style="height:7.5rem">
+                                @if (ViewBag.Translator != null)
+                                {
+                                    foreach (Translator trans in ViewBag.Translator)
+                                    {
+                                        <div class="input-group input-group228" id="@trans.Id">
+                                            <input type="text" name="Name" value="@trans.Name" class="form-control" placeholder="Имя" />
+                                            <input type="text" name="LastName" value="@trans.LastName" class="form-control" placeholder="Фамилия" />
+                                            <input type="text" name="PatronymicName" value="@trans.PatronymicName" class="form-control" placeholder="Отчество" />
+                                            <button id="add" class="btn btn-form btn-edit btn-edit-call">С</button>
+                                            <button id="add" class="btn btn-form btn-delete-call">У</button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12"><h2 class="title-main">@ViewBag.Title</h2></div>
+    <div class="col-lg-6">
+        <div class="box-bg-form base-form">
+            @using (Ajax.BeginForm("AddTable", new AjaxOptions { OnFailure = "error", OnSuccess = "result" }))
+            {
+                <h2>Книга</h2>
+                <input type="text" class="form-control" name="Number" placeholder="Номер на складе" />
+                <label>Фото</label>
+                <div class="box">
+                    <input type="file" id="document-img" accept=".jpg, .jpeg, .png" class="form-control-file" placeholder="Отчество автора" />
+                    <input type="hidden" name="ImgSrc" value="" id="document-img-src" />
+                    <img id="blah" src="~/Content/Images/img_book_default.png" />
+                    <span class="bg" id="click-form-img"></span>
+                </div>
+                <label>Базовая информация об книге</label>
+                <div class="input-group">
+                    <input type="text" name="Name" class="form-control" placeholder="Название книги" />
+                </div>
+                <div class="input-group">
+                    <input type="date" class="form-control" name="DateWrite" placeholder="Дата написания" />
+                </div>
+                <div class="input-group">
+                    <input type="date" class="form-control" name="DatePublication" placeholder="Дата публикации" />
+                </div>
+                <div class="input-group">
+                    <textarea type="text" name="Description" class="form-control" placeholder="Краткое описание"></textarea>
+                </div>
+                <label>Связные таблицы</label>
+                <div class="input-group">
+                    <input type="hidden" name="AuthorId" />
+                    <select id="tt" class="form-control">
+                        <option>Выберите автора</option>
+                        @foreach (Author author in ViewBag.Author)
+                        {
+                            <option id="@author.Id">@author.Name @author.LastName @author.PatronymicName</option>
+                        }
+                    </select>
+                    <span class="data-born">Автор</span>
+                </div>
+                <div class="input-group">
+                    <input type="hidden" name="PublisherId" />
+                    <select id="tt2" class="form-control">
+                        <option>Выберите издателя</option>
+                        @foreach (Publisher publisher in ViewBag.Publisher)
+                        {
+                            <option id="@publisher.Id">@publisher.Name</option>
+                        }
+                    </select>
+                    <span class="data-born">Издатель</span>
+                </div>
+                <label>Цена</label>
+                <div class="input-group">
+                    <input type="text" name="Price" class="form-control" placeholder="Цена" />
+                    <input type="text" name="Discount" class="form-control" placeholder="Скидка" />
+                </div>
+                <input type="submit" id="zalu" name="" class="hide-submit" />
+            }
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="row">
+
+            <div class="col-lg-12 box-many">
+
+                <div class="box-bg-form box-con">
+                    <span class="open-box-bf">X</span>
+                    <h2>Управление жанрами</h2>
+                    <div class="input-group form-genre">
+                        <input type="text" name="Genre" class="form-control add-genre-form-228" placeholder="Название жанра" />
+                        <span class="data-born">Поиск жанра</span>
+                    </div>
+
+                    <div class="box-fow2">
+                        <div class="input-group">
+                            <input type="text" class="form-control add-genre-form" placeholder="Название жанра" />
+                            <button class="btn btn-form add-genre-228">Добавить</button>
+                        </div>
+                        <div id="insert-request">
+                            <div class="box-fow">
+                                @if (ViewBag.Genre != null)
+                                {
+                                    foreach (Genre genre in ViewBag.Genre)
+                                    {
+                                        <div class="input-group input-group228" id="@genre.Id">
+                                            <input type="text" name="LastName" value="@genre.GenreName" class="form-control" placeholder="Название жанра" />
+                                            <button id="add" class="btn btn-form btn-edit btn-edit-call">С</button>
+                                            <button id="add" class="btn btn-form btn-delete-call">У</button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box-bg-form bd con-base-1">
+                    <span class="close-box-bf">E</span>
+                    <h2>Установить жанр</h2>
+                    <div class="input-group form-genre">
+                        <select name="Name" id="Form-Genre" class="form-control">
+                            @if (ViewBag.Genre != null)
+                            {
+                                <option>Выберите жанр</option>
+                                foreach (Genre genre in ViewBag.Genre)
+                                {
+                                    <option id="@genre.Id">@genre.GenreName</option>
+                                }
+                            }
+                        </select>
+                        <span class="data-born">Выберите жанр</span>
+                    </div>
+
+                    <div class="box-fow" id="Genre-Box">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 box-many">
+
+                <div class="box-bg-form box-con2">
+                    <span class="open-box-bf">X</span>
+                    <h2>Управление языками</h2>
+                    <div class="input-group form-genre">
+                        <input type="text" name="Genre" class="form-control add-genre-form-228" placeholder="Название жанра" />
+                        <span class="data-born">Поиск жанра</span>
+                    </div>
+
+                    <div class="box-fow2">
+                        <div class="input-group">
+                            <input type="text" class="form-control add-genre-form" placeholder="Название жанра" />
+                            <button class="btn btn-form add-genre-228">Добавить</button>
+                        </div>
+                        <div id="insert-request">
+                            <div class="box-fow">
+                                @if (ViewBag.Language != null)
+                                {
+                                    foreach (Language genre in ViewBag.Language)
+                                    {
+                                        <div class="input-group input-group228" id="@genre.Id">
+                                            <input type="text" name="LastName" value="@genre.LanguageName" class="form-control" placeholder="Название языка" />
+                                            <button id="add" class="btn btn-form btn-edit btn-edit-call">С</button>
+                                            <button id="add" class="btn btn-form btn-delete-call">У</button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box-bg-form bd con-base-2">
+                    <span class="close-box-bf">E</span>
+                    <h2>Установить язык</h2>
+                    <div class="input-group form-genre">
+                        <select name="Name" id="Form-Genre" class="form-control">
+                            @if (ViewBag.Language != null)
+                            {
+                                <option>Выберите язык</option>
+                                foreach (Language genre in ViewBag.Language)
+                                {
+                                    <option id="@genre.Id">@genre.LanguageName</option>
+                                }
+                            }
+                        </select>
+                        <span class="data-born">Выберите язык</span>
+                    </div>
+
+                    <div class="box-fow" id="Genre-Box">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <button id="addAuthor" class="btn btn-form btn-btn">Добавить</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/script2.js"></script>
+<script src="~/Scripts/validator.js-master/validator.min.js"></script>
+<script src="~/Scripts/validation-form.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".close-box-bf").click(function () {
+            $(this).parent().addClass("hide-men");
+        });
+        $(".open-box-bf").click(function () {
+            $(this).parent().siblings(".hide-men").removeClass("hide-men");
+        });
+
+        $("#tt").change(function () {
+            $(this).siblings("input").val($(this).find("option:contains('" + $(this).val() + "')").attr("id"));
+
+        });
+
+        $("#tt2").change(function () {
+            $(this).siblings("input").val($(this).find("option:contains('" + $(this).val() + "')").attr("id"));
+
+        });
+
+        const Test1 = new ControllTable("Genre", ".box-con", ".con-base-1", "Выберите жанр");
+        Test1.controll_list.SetAddList();
+        Test1.controll_list.SetRemoveList();
+
+        const Test2 = new ControllTable("Languages", ".box-con2", ".con-base-2", "Выберите язык", true, Language);
+        Test2.controll_list.SetAddList();
+        Test2.controll_list.SetRemoveList();
+
+        const Test3 = new ControllTableTranslator(".box-con3", ".con-base-3", "Выберите ФИО", true);
+        Test3.controll_list.SetAddList();
+        Test3.controll_list.SetRemoveList();
+
+        const Test4 = new LoadImage("Forms", "UploadBook");
+
+        ValidationBook(result);
+    });
+</script>

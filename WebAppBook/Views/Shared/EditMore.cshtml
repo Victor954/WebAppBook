@@ -1,0 +1,70 @@
+﻿@using WebAppBook.Models;
+<div class="row daun">
+    <div class="col-12"><h2 class="title-main">Прочее</h2></div>
+    <div class="col-lg-6">
+        <div class="box-bg-form box-con2 base-form">
+            <h2>Языки</h2>
+            <div class="input-group form-genre">
+                <input type="text" name="Genre" class="form-control add-genre-form-228" placeholder="Название языка" />
+                <span class="data-born">Поиск языка</span>
+            </div>
+
+            <div class="box-fow2">
+                <div class="input-group">
+                    <input type="text" class="form-control add-genre-form" placeholder="Название языка" />
+                    <button class="btn btn-form add-genre-228">Добавить</button>
+                </div>
+                <div id="insert-request2">
+                    <div class="box-fow">
+                        @if (ViewBag.Language != null)
+                        {
+                            foreach (Language genre in ViewBag.Language)
+                            {
+                                <div class="input-group input-group228" id="@genre.Id">
+                                    <input type="text" name="LastName" value="@genre.LanguageName" class="form-control" placeholder="Название языка" />
+                                    <button id="add" class="btn btn-form btn-edit btn-edit-call">С</button>
+                                    <button id="add" class="btn btn-form btn-delete-call">У</button>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="box-bg-form box-con3 base-form form-translator">
+            <h2>Переводчики</h2>
+            <div class="input-group form-genre">
+                <input type="text" name="Genre" class="form-control add-genre-form-228" placeholder="ФИО" />
+                <span class="data-born">Поиск перевод</span>
+            </div>
+
+            <div class="box-fow2">
+                <div class="input-group mone">
+                    <input type="text" class="form-control add-genre-form" placeholder="ФИО" />
+                    <button class="btn btn-form add-genre-228">Добавить</button>
+                </div>
+                <div id="insert-request3">
+                    <div class="box-fow">
+                        @if (ViewBag.Translator != null)
+                        {
+                            foreach (Translator trans in ViewBag.Translator)
+                            {
+                                <div class="input-group input-group228" id="@trans.Id">
+                                    <input type="text" name="Name" value="@trans.Name" class="form-control" placeholder="Имя" />
+                                    <input type="text" name="LastName" value="@trans.LastName" class="form-control" placeholder="Фамилия" />
+                                    <input type="text" name="PatronymicName" value="@trans.PatronymicName" class="form-control" placeholder="Отчество" />
+                                    <button id="add" class="btn btn-form btn-edit btn-edit-call">С</button>
+                                    <button id="add" class="btn btn-form btn-delete-call">У</button>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

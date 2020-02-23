@@ -1,0 +1,168 @@
+﻿@using WebAppBook.Models;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#home" data-toggle="tab" id="BookAjaxLoader">Книги</a></li>
+    <li><a href="#profile" data-toggle="tab" id="AuthorAjaxLoader">Авторы</a></li>
+    <li><a href="#messages" data-toggle="tab" id="PublisherAjaxLoader">Издатели</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div class="tab-pane active" id="home">
+        <h1>Книги<span class="filter" data-target="#228-ff">filter</span></h1>
+        <div class="hide-filter">
+            <div class="filter-box hide-228" id="228-ff">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="close-filter" data-target="#228-ff">X</span>
+                    </div>
+                    <div class="col-12">
+                        <h4>Поиск книги</h4>
+                        <input type="text" class="search-author" id="search-228-author2" />
+                    </div>
+                    <div class="col-12">
+                        <h4>Поиск автора</h4>
+                        <input type="text" class="search-author" id="search-author-book-228" />
+                    </div>
+
+                    <div class="col-12">
+                        <h4>Жанры</h4>
+
+                        <div class="box-genre-index2">
+                            @foreach (Genre g in ViewBag.Genre)
+                            {
+                                <span id="@g.Id" class="target-genre click-add-index-228">@g.GenreName</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h4>Языки</h4>
+
+                        <div class="box-genre-index3">
+                            @foreach (Language g in ViewBag.Language)
+                            {
+                                <span id="@g.Id" class="target-genre click-add-index-228">@g.LanguageName</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="result-book-228">
+            @Html.Action("TableInvoke","Book")
+        </div>
+    </div>
+    <div class="tab-pane" id="profile">
+        <h1>Авторы<span class="filter" data-target="#228-ff2">filter</span></h1>
+        <div class="hide-filter">
+            <div class="filter-box hide-228" id="228-ff2">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="close-filter" data-target="#228-ff2">X</span>
+                    </div>
+                    <div class="col-12">
+                        <h4>Поиск автора</h4>
+                        <input type="text" class="search-author" id="search-228-author" />
+                    </div>
+
+                    <div class="col-12">
+                        <h4>Жанры</h4>
+
+                        <div class="box-genre-index">
+                            @foreach (Genre g in ViewBag.Genre)
+                            {
+                                <span id="@g.Id" class="target-genre click-add-index-228">@g.GenreName</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="result-author-228">
+            
+        </div>
+    </div>
+    <div class="tab-pane" id="messages">
+        <h1>Издатели<span class="filter" data-target="#228-ff3">filter</span></h1>
+        <div class="hide-filter">
+            <div class="filter-box hide-228" id="228-ff3">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="close-filter" data-target="#228-ff3">X</span>
+                    </div>
+                    <div class="col-12">
+                        <h4>Поиск издателя</h4>
+                        <input type="text" class="search-author" id="search-228-publisher" />
+                    </div>
+                    <div class="col-12">
+                        <h4>Поиск книги издателя</h4>
+                        <input type="text" class="search-author" id="search-228-publisher-book" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="result-publisher-228">
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/script2.js"></script>
+<script src="~/Scripts/Complite.js"></script>
+<script>
+    $(document).ready(function () {
+
+        const controllBook = new TableControllerContext("Book", "#result-book-228",Remove);
+        const controllAuthor = new TableControllerContext("Author", "#result-author-228",Remove);
+        const controllPublisher = new TableControllerContext("Publisher", "#result-publisher-228",Remove);
+
+        fun("Search", ".box-genre-index","#search-228-author","#result-author-228");
+        funBook(".box-genre-index2", "#search-228-author2", ".box-genre-index3", "#search-author-book-228", "#result-book-228");
+        funPublisher("#search-228-publisher", "#search-228-publisher-book", "#result-publisher-228");
+
+        function SetPage(parent,controller)
+        {
+            var len = $(parent + ".box-many-main").length;
+
+            if (len == 0) {
+                var curr = Number.parseInt($(parent + " .pagination-elems .currect").html())
+                var res = (curr == 1) ? curr - 1 : curr - 2;
+
+                $.ajax({
+                    type: "POST",
+                    url: "/" + controller + "/SetPagination",
+                    data: { page: res },
+                    success: function (result) {
+                        $(parent).html(result);
+                    }
+                });
+
+            }
+
+        }
+        function Remove(parent,action,controller) {
+        $(parent).on('click', '.delete', function () {
+            var id = $(this).parent().parent().attr('id');
+
+            $(this).parent().hide(500, function () {
+                $(this).remove();
+            });
+            $.ajax({
+                type: "POST",
+                url: "/"+controller+"/"+action,
+                data: { Id: id },
+                success: function () {
+
+                    SetPage(parent, controller);
+                }
+            });
+        });
+        }
+    });
+</script>

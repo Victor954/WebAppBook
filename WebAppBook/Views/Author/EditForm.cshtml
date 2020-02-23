@@ -1,0 +1,381 @@
+﻿@using WebAppBook.Models;
+@using System.Linq;
+@{
+    ViewBag.Title = "Изменить автора";
+}
+@{Author author = ViewBag.Table;}
+<div class="result-msg">
+    <span class="close-msg">X</span>
+    <p></p>
+</div>
+<div class="box-3">
+
+</div>
+<div class="row daun">
+    <div class="col-12"><h2 class="title-main">@ViewBag.Title</h2></div>
+    <div class="col-lg-6">
+        <div class="box-bg-form base-form">
+
+            @using (Ajax.BeginForm("EditTable", new AjaxOptions { OnFailure = "error", OnSuccess = "result" }))
+            {
+                <h2></h2>
+                <label>Фото</label>
+                <input type="hidden" name="Id" value="@author.Id"/>  
+                <div class="box">
+                    <input type="file" id="document-img" accept=".jpg, .jpeg, .png" class="form-control-file" placeholder="Отчество автора" />
+                    <input type="hidden" name="ImgSrc" value="@author.ImgSrc" id="document-img-src" />
+                    <img id="blah" src="@author.ImgSrc" />
+                    <span class="bg" id="click-form-img"></span>
+                </div>
+                <label>ФИО</label>
+                <div class="input-group">
+                    <input type="text" name="Name" class="form-control" placeholder="Имя автора" value="@author.Name"/>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="LastName" class="form-control" placeholder="Фамилия автора" value="@author.LastName"/>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="PatronymicName" class="form-control" placeholder="Отчество автора" value="@author.PatronymicName"/>
+                </div>
+                <label>Информация об авторе</label>
+                <div class="input-group">
+                    <select name="CountryBorn" id="County-selected" data-target="@author.CountryBorn" class="form-control">
+                        <option>Выберите страну</option>
+                        <option>Россия</option>
+                        <option data-id="26334910464">Абхазия</option>
+                        <option data-id="10400654407">Австралия</option>
+                        <option data-id="10426428818">Австрия</option>
+                        <option data-id="10410450732">Азербайджан</option>
+                        <option data-id="10410522537">Албания</option>
+                        <option data-id="10419531540">Алжир</option>
+                        <option data-id="10395022134">Ангилья</option>
+                        <option data-id="10400909101">Ангола</option>
+                        <option data-id="10396157513">Андорра</option>
+                        <option data-id="10401935333">Антигуа и Барбуда</option>
+                        <option data-id="10425952826">Антильские острова</option>
+                        <option data-id="10401434079">Аргентина</option>
+                        <option data-id="10417232037">Армения</option>
+                        <option data-id="10410310303">Афганистан</option>
+                        <option data-id="10396352095">Бангладеш</option>
+                        <option data-id="10411706009">Барбадос</option>
+                        <option data-id="10406995556">Бахрейн</option>
+                        <option data-id="10423319006">Беларусь</option>
+                        <option data-id="10394079228">Белиз</option>
+                        <option data-id="10408272261">Бельгия</option>
+                        <option data-id="10423428619">Бенин</option>
+                        <option data-id="10414686106">Бермуды</option>
+                        <option data-id="10393631600">Болгария</option>
+                        <option data-id="10409174087">Боливия</option>
+                        <option data-id="10396139862">Босния/Герцеговина</option>
+                        <option data-id="10401213745">Ботсвана</option>
+                        <option data-id="10394346015">Бразилия</option>
+                        <option data-id="10409651721">Британские Виргинские о-ва</option>
+                        <option data-id="10419484235">Бруней</option>
+                        <option data-id="10404060904">Буркина Фасо</option>
+                        <option data-id="10404374905">Бурунди</option>
+                        <option data-id="10404540364">Бутан</option>
+                        <option data-id="10412870819">Вануату</option>
+                        <option data-id="10411136417">Ватикан</option>
+                        <option data-id="10406170538">Великобритания</option>
+                        <option data-id="10409956165">Венгрия</option>
+                        <option data-id="10396486463">Венесуэла</option>
+                        <option data-id="10415852578">Вьетнам</option>
+                        <option data-id="10393450888">Габон</option>
+                        <option data-id="10417683703">Гаити</option>
+                        <option data-id="10403255122">Гайана</option>
+                        <option data-id="10399865285">Гамбия</option>
+                        <option data-id="10397676008">Гана</option>
+                        <option data-id="10414930207">Гваделупа</option>
+                        <option data-id="10419428643">Гватемала</option>
+                        <option data-id="10413226540">Гвинея</option>
+                        <option data-id="10403555674">Гвинея-Бисау</option>
+                        <option data-id="10397571399">Германия</option>
+                        <option data-id="10399224101">Гернси остров</option>
+                        <option data-id="10406295560">Гибралтар</option>
+                        <option data-id="10399351736">Гондурас</option>
+                        <option data-id="10412717530">Гонконг</option>
+                        <option data-id="12850988277547">Государство Палестина</option>
+                        <option data-id="10395467357">Гренада</option>
+                        <option data-id="10408186696">Гренландия</option>
+                        <option data-id="10410192803">Греция</option>
+                        <option data-id="10411801535">Грузия</option>
+                        <option data-id="10414151425">ДР Конго</option>
+                        <option data-id="10398024550">Дания</option>
+                        <option data-id="10392982119">Джерси остров</option>
+                        <option data-id="10423910652">Джибути</option>
+                        <option data-id="10392890835">Доминиканская Республика</option>
+                        <option data-id="10402537077">Египет</option>
+                        <option data-id="10422229795">Замбия</option>
+                        <option data-id="10405794288">Западная Сахара</option>
+                        <option data-id="10410213419">Зимбабве</option>
+                        <option data-id="10424542073">Израиль</option>
+                        <option data-id="10415489530">Индия</option>
+                        <option data-id="10394991378">Индонезия</option>
+                        <option data-id="10412777633">Иордания</option>
+                        <option data-id="10405044887">Ирак</option>
+                        <option data-id="10419405993">Иран</option>
+                        <option data-id="10421760139">Ирландия</option>
+                        <option data-id="10420187771">Исландия</option>
+                        <option data-id="10423450359">Испания</option>
+                        <option data-id="10414775922">Италия</option>
+                        <option data-id="10418754394">Йемен</option>
+                        <option data-id="10396069806">Кабо-Верде</option>
+                        <option data-id="10415971874">Казахстан</option>
+                        <option data-id="10410376034">Камбоджа</option>
+                        <option data-id="10417801476">Камерун</option>
+                        <option data-id="10393621238">Канада</option>
+                        <option data-id="10424568667">Катар</option>
+                        <option data-id="10421430373">Кения</option>
+                        <option data-id="10401168591">Кипр</option>
+                        <option data-id="10397251386">Китай</option>
+                        <option data-id="10398961528">Колумбия</option>
+                        <option data-id="10415000877">Коста-Рика</option>
+                        <option data-id="10397441630">Кот-д'Ивуар</option>
+                        <option data-id="10400805253">Куба</option>
+                        <option data-id="10425905274">Кувейт</option>
+                        <option data-id="10417619125">Кука острова</option>
+                        <option data-id="10405644775">Кыргызстан</option>
+                        <option data-id="10422182119">Лаос</option>
+                        <option data-id="10405172143">Латвия</option>
+                        <option data-id="10404932758">Лесото</option>
+                        <option data-id="10426378265">Либерия</option>
+                        <option data-id="10394492001">Ливан</option>
+                        <option data-id="10396193388">Ливия</option>
+                        <option data-id="10408982062">Литва</option>
+                        <option data-id="10402377389">Лихтенштейн</option>
+                        <option data-id="10417321877"> Люксембург</option>
+                        <option data-id="10421455265">Маврикий</option>
+                        <option data-id="10402331337">Мавритания</option>
+                        <option data-id="10395008003">Мадагаскар</option>
+                        <option data-id="10403452946">Македония</option>
+                        <option data-id="100398411098">Малави</option>
+                        <option data-id="10424318428">Малайзия</option>
+                        <option data-id="10392808561">Мали</option>
+                        <option data-id="10419625380">Мальдивские острова</option>
+                        <option data-id="10418580649">Мальта</option>
+                        <option data-id="10398888997"> Марокко</option>
+                        <option data-id="10405114643">Мексика</option>
+                        <option data-id="10395900020">Мозамбик</option>
+                        <option data-id="10397135919">Молдова</option>
+                        <option data-id="10406156316">Монако</option>
+                        <option data-id="10400052977">Монголия</option>
+                        <option data-id="10397507309">Мьянма (Бирма)</option>
+                        <option data-id="10425274320">Мэн остров</option>
+                        <option data-id="10398918582">Намибия</option>
+                        <option data-id="10395547483">Непал</option>
+                        <option data-id="10403897067">Нигер</option>
+                        <option data-id="10403906713">Нигерия</option>
+                        <option data-id="10416691196">Нидерланды (Голландия)</option>
+                        <option data-id="10415455264">Никарагуа</option>
+                        <option data-id="10416927951">Новая Зеландия</option>
+                        <option data-id="10417478473">Новая Каледония</option>
+                        <option data-id="10403907946">Норвегия</option>
+                        <option data-id="10407515868">О.А.Э.</option>
+                        <option data-id="10413735381">Оман</option>
+                        <option data-id="10407624473">Пакистан</option>
+                        <option data-id="32108942709">Палау</option>
+                        <option data-id="10417127108">Панама</option>
+                        <option data-id="10414119671">Папуа Новая Гвинея</option>
+                        <option data-id="10397730315">Парагвай</option>
+                        <option data-id="10397453891">Перу</option>
+                        <option data-id="10420475109">Питкэрн остров</option>
+                        <option data-id="10414896014">Польша</option>
+                        <option data-id="10396879941">Португалия</option>
+                        <option data-id="10413603686">Пуэрто Рико</option>
+                        <option data-id="10410395082">Республика Конго</option>
+                        <option data-id="10395017596">Реюньон</option>
+                        <option data-id="10421210322">Руанда</option>
+                        <option data-id="10416439221">Румыния</option>
+                        <option data-id="10395431810">США</option>
+                        <option data-id="10401272160">Сальвадор</option>
+                        <option data-id="10418117522">Самоа</option>
+                        <option data-id="10425587057">Сан-Марино</option>
+                        <option data-id="10402425385">Сан-Томе и Принсипи</option>
+                        <option data-id="10410580805">Саудовская Аравия</option>
+                        <option data-id="10408209383">Свазиленд</option>
+                        <option data-id="10411324250">Святая Люсия</option>
+                        <option data-id="10394159876">Северная Корея</option>
+                        <option data-id="10392716690">Сейшеллы</option>
+                        <option data-id="10415402038">Сен-Пьер и Микелон</option>
+                        <option data-id="10399264429">Сенегал</option>
+                        <option data-id="10413542523">Сент Китс и Невис</option>
+                        <option data-id="10397340738">Сент-Винсент и Гренадины</option>
+                        <option data-id="10403797723">Сербия</option>
+                        <option data-id="10403882021">Сингапур</option>
+                        <option data-id="10421914141">Сирия</option>
+                        <option data-id="10394488739">Словакия</option>
+                        <option data-id="10412478477">Словения</option>
+                        <option data-id="10399243721">Соломоновы острова</option>
+                        <option data-id="10402270246">Сомали</option>
+                        <option data-id="10422456146">Судан</option>
+                        <option data-id="10399143993">Суринам</option>
+                        <option data-id="10419209718">Сьерра-Леоне</option>
+                        <option data-id="10426480621">Таджикистан</option>
+                        <option data-id="10420570186">Таиланд</option>
+                        <option data-id="10394605145">Тайвань</option>
+                        <option data-id="10412575230">Танзания</option>
+                        <option data-id="10396777362">Теркс и Кейкос</option>
+                        <option data-id="10406981529">Того</option>
+                        <option data-id="10394734441">Токелау острова</option>
+                        <option data-id="10417023658">Тонга</option>
+                        <option data-id="10424065948">Тринидад и Тобаго</option>
+                        <option data-id="10400207372">Тувалу</option>
+                        <option data-id="10399201022">Тунис</option>
+                        <option data-id="10396721959">Туркменистан</option>
+                        <option data-id="10406909768">Турция</option>
+                        <option data-id="10410627224">Уганда</option>
+                        <option data-id="10423529949">Узбекистан</option>
+                        <option data-id="10424076448">Украина</option>
+                        <option data-id="10395074682">Уоллис и Футуна о-ва</option>
+                        <option data-id="10426234429">Уругвай</option>
+                        <option data-id="10395058357">Фарерские острова</option>
+                        <option data-id="10423400059">Фиджи</option>
+                        <option data-id="10423933302">Филиппины</option>
+                        <option data-id="10405620585">Финляндия</option>
+                        <option data-id="10394185598">Франция</option>
+                        <option data-id="10395243227">Французская Полинезия</option>
+                        <option data-id="10421079332">Хорватия</option>
+                        <option data-id="10393424473">Чад</option>
+                        <option data-id="26287387136">Черногория</option>
+                        <option data-id="10395033214">Чехия</option>
+                        <option data-id="10397429545">Чили</option>
+                        <option data-id="10401982134">Швейцария</option>
+                        <option data-id="10393232409">Швеция</option>
+                        <option data-id="10400772860">Шри-Ланка</option>
+                        <option data-id="10408281200">Эквадор</option>
+                        <option data-id="10413994177">Экваториальная Гвинея</option>
+                        <option data-id="10422842223">Эритрея</option>
+                        <option data-id="10399393757">Эстония</option>
+                        <option data-id="10404948045">Эфиопия</option>
+                        <option data-id="10396767805">ЮАР</option>
+                        <option data-id="10409076784">Южная Корея</option>
+                        <option data-id="26334910720">Южная Осетия</option>
+                        <option data-id="10415454380">Ямайка</option>
+                        <option data-id="10404808625">Япония</option>
+                    </select>
+                    <span class="data-born">Страна автора</span>
+                </div>
+                <div class="input-group">
+                    <input type="date" class="form-control" name="DateBorn" placeholder="Дата рождения" value="@author.DateBorn.Year-@author.DateBorn.Month-@author.DateBorn.Day"/>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="Info" placeholder="Краткое описание" value="@author.Info"/>
+                </div>
+                <input type="submit" id="zalu" name="" class="hide-submit" />
+            }
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box-bg-form con-base-1">
+                    <h2>Установить жанр</h2>
+                    <div class="input-group form-genre">
+                        <select name="Name" id="Form-Genre" class="form-control">
+                            @if (ViewBag.Genre != null)
+                            {
+                                <option>Выберите жанр</option>
+                                foreach (Genre genre in ViewBag.Genre)
+                                {
+                                    if (!ListCollection.genres.Any(s => s.Id == genre.Id))
+                                    {
+                                        <option id="@genre.Id">@genre.GenreName</option>
+                                    }
+                                }
+                            }
+                        </select>
+                        <span class="data-born">Выберите жанр</span>
+                    </div>
+
+                    <div class="box-fow" id="Genre-Box">
+                        @foreach (Genre genre in ListCollection.genres)
+                        {
+                            <span class='target-genre' id="@genre.Id"><span class='close-m'>x</span><span class='val-genre'>@genre.GenreName</span></span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="box-bg-form box-con" style="margin-top:5rem">
+                    <h2>Управление жанрами</h2>
+                    <div class="input-group form-genre">
+                        <input type="text" name="Genre" class="form-control add-genre-form-228" placeholder="Название жанра" />
+                        <span class="data-born">Поиск жанра</span>
+                    </div>
+
+                    <div class="box-fow2">
+                        <div class="input-group">
+                            <input type="text" class="form-control add-genre-form" placeholder="Название жанра" />
+                            <button class="btn btn-form add-genre-228">Добавить</button>
+                        </div>
+                        <div id="insert-request">
+                            <div class="box-fow">
+                                @if (ViewBag.Genre != null)
+                                {
+                                    foreach (Genre genre in ViewBag.Genre)
+                                    {
+                                        <div class="input-group input-group228" id="@genre.Id">
+                                            <input type="text" name="LastName" value="@genre.GenreName" class="form-control" placeholder="Название жанра" />
+                                            <button id="add" class="btn btn-form btn-edit btn-edit-call">С</button>
+                                            <button id="add" class="btn btn-form btn-delete-call">У</button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <button id="addAuthor" class="btn btn-form btn-btn">Сохранить</button>
+            </div>
+
+        </div>
+    </div>
+    <hr />
+    <div class="col-lg-12">
+
+    </div>
+</div>
+<div class="box-6">
+
+</div>
+@Html.Partial("EditMore")
+<script src="~/Scripts/script2.js"></script> 
+<script src="~/Scripts/validator.js-master/validator.min.js"></script>
+<script src="~/Scripts/validation-form.js"></script>
+<script>
+    $(document).ready(function () {
+        const Test1 = new ControllTable("Genre", ".box-con", ".con-base-1", "Выберите жанр");
+        Test1.controll_list.SetAddList();
+        Test1.controll_list.SetRemoveList();
+
+        const Test2 = new ControllTable("Languages", ".box-con2", null, null, false, Language);
+
+        const Test3 = new ControllTableTranslator(".box-con3", ".box-con2", null, false);
+
+        const Test4 = new LoadImage("Author", "Upload");
+
+        function SetCountryBurn() {
+            var country = $("#County-selected").attr("data-target");
+
+            for (i = 0; i < $("#County-selected option").length; i++) {
+
+                var countryfind = $("#County-selected option").eq(i);
+
+                if (countryfind.html() == country) {
+                    countryfind.attr("selected","");
+                }
+            }
+
+
+        }
+        SetCountryBurn();
+
+        ValidationAuthor(result);
+    });
+</script>

@@ -1,0 +1,582 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.col-menu-1 {
+    display: block;
+    width: 4rem;
+    height: 100vh;
+    background-color: #1b1b1b;
+}
+
+.menu {
+    height: 100vh;
+    width:100%;
+}
+
+.menu-side-hidden{
+    height: 8rem;
+}
+
+.navbar-menu-side {
+    font-size: 1.2em;
+    list-style-type:none;
+    padding:0px;
+    margin-top:3.1rem;
+}
+.navbar-menu-side .nav-item a{
+    transition:all .2s;
+    padding: 1rem 4rem;
+    color: #9c9c9c;
+    display: inline-block;
+    width: 100%;
+}
+
+.navbar-menu-side .nav-item a:hover{
+    cursor:pointer;
+    color: #d6d5d5;
+    text-decoration:none;
+}
+
+.box-menu {
+    background-color: #333333;
+    box-shadow: 10px 0px 12px 0px #868686;
+}
+
+.menu-side-hidden .btn-hamburger {
+    background-color: inherit;
+    border-style: none;
+    width: 3.5rem;
+    display: block;
+    margin: 0px auto;
+    margin: 25px;
+}
+
+.menu-side-hidden .btn-hamburger .line {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: .6rem;
+    border: solid 1px #d6d6d6;
+}
+
+.hide-menu {
+    position: relative;
+    left: -500px;
+}
+
+.input-group {
+    margin: 1rem;
+    width: 93%;
+}
+.base-form .input-group input{
+    max-width:100%;
+}
+.base-form label {
+    font-size: 1.3rem;
+    font-weight:700;
+}
+.base-form .box img {
+    width: 26rem;
+    height: 26rem;
+    display: block;
+    margin: 0px auto;
+    border-radius: 20px;
+}
+.base-form .box .bg {
+    position: absolute;
+    width: 26rem;
+    height: 26rem;
+    left: 2px;
+    top: 0px;
+    background-color: #fff;
+    opacity: 0;
+    transition: all .2s;
+    border-radius: 20px;
+    border: solid 1px #e2e2e2;
+}
+.base-form .box .bg:hover{
+    opacity:1;
+    cursor:pointer;
+}
+.base-form .box {
+    position: relative;
+    border-radius: 20px;
+}
+.base-form .box .form-control-file {
+    height: 0px;
+    overflow: hidden;
+}
+
+.box-bg-form {
+    padding: 4rem 3rem;
+    border-radius: 20px;
+    border: solid 1px #d6d6d6;
+}
+
+.btn-form {
+    border: 1px solid #646ee2;
+    color: #000;
+    padding: .4rem 2rem;
+    border-radius: 10px;
+    margin: 0px auto;
+    display: block;
+    margin-top: 3rem;
+    transition: all .2s;
+}
+.btn-form:hover{
+    background-color:#646ee2;
+    color:#fff;
+}
+
+.input-group .data-born {
+    width: 31%;
+    text-align: right;
+    height: 27px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 600;
+}
+
+.box-fow {
+    width: 100%;
+    height: 10rem;
+    border-radius: 12px;
+    padding: .7rem;
+    overflow-y: scroll;
+    border: solid 1px #e2e2e2;
+}
+
+.form-genre .form-control {
+    background: inherit;
+    border: none;
+    border-bottom: solid 1px #c7c7c7;
+}
+
+.target-genre {
+    display: inline-block;
+    float: left;
+    width: auto;
+    padding: .1rem 1rem;
+    border-radius: 10px;
+    color: #000;
+    margin: .5rem;
+    border: solid 1px #646ee2;
+    transition:all .2s;
+}
+.target-genre:hover{
+    background-color: #646ee2;
+    color:#fff;
+    cursor:pointer;
+}
+.target-genre span{
+    vertical-align:text-top;
+    position: relative;
+    bottom: 2px;
+}
+.target-genre .close-m{
+    color: #212529;
+    margin-right: 9px;
+    transition:all .2s;
+}
+
+.target-genre .close-m:hover{
+    cursor:pointer;
+    color:#fff;
+}
+
+.box-fow2 .input-group .form-control {
+    display: inline;
+    float: left;
+    max-width: 100%;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 12px;
+    border-color: #e2e2e2;
+    height: 39px;
+}
+.box-fow2 .input-group .btn-form {
+    display: inline;
+    float: left;
+    margin: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: inherit;
+    border: solid 1px #646ee2;
+    color: #000;
+    transition:all .2s;
+}
+.box-fow2 .input-group .btn-form:hover{
+    background-color:#646ee2;
+    color:#fff;
+}
+.box-fow2 .input-group{
+    margin:0px;
+    margin-top:1rem;
+    width:100%;
+}
+
+.box-fow2  .box-fow{
+    border-top-left-radius: 0px;
+    padding:0px;
+}
+.box-fow2 .input-group228 {
+    margin-top: 0px;
+}
+.box-fow2 .input-group228 .form-control {
+    border-top-left-radius: 0px;
+    border-radius: 0px;
+    border:none;
+}
+.box-fow2 .input-group228 .btn-form {
+    border-radius: 0px;
+    background-color:initial;
+    border:solid 1px #d0d0d0;
+    color:#000;
+    border:none;
+    border-left:solid 1px #d0d0d0;
+}
+.box-fow2 .input-group228 .btn-form:hover{
+    color: #FF8AB4;
+    background-color:inherit;
+}
+.box-fow2 .input-group228 .btn-edit:hover{
+    color:#868ee8;
+    background-color:inherit;
+}
+
+.box-fow2 .input-group228 {
+    border-bottom: solid 1px #d0d0d0;
+}
+
+.hide-submit {
+    overflow: hidden;
+    height: 0px;
+    border: none;
+    padding: 0px;
+}
+
+.btn-btn{
+    margin:0px;
+    margin-left:3rem;
+    margin-top:3rem;
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 1260px;
+    }
+}
+
+.body-content .daun {
+    border: solid 1px #c5c9ef;
+    border-radius: 20px;
+    padding: 5rem;
+}
+
+.box-3{
+    height:3rem;
+}
+.box-6 {
+    height: 6rem;
+}
+
+
+.title-main{
+    margin-bottom:3rem;
+}
+
+.form-translator .box-fow2 .input-group228{
+    width: 200%;
+}
+.form-translator .box-fow2 .input-group228 .form-control{
+    border-left: solid 1px #d0d0d0;
+}
+.form-translator .box-fow {
+    overflow-x: scroll;
+}
+.form-translator .box-fow2 .input-group228 .form-control:first-child {
+    width: 3rem;
+    border-left: none;
+}
+.form-translator .box-fow2 .mone .form-control:first-child {
+    width: 25%;
+    border-top-left-radius: 12px;
+}
+.form-translator .box-fow2 .mone .form-control{
+    border-radius:0px;
+}
+
+.input-group textarea {
+    max-width: 500px;
+    height: 16.7rem;
+}
+
+.box-many .box-bg-form {
+    position: absolute;
+    background-color: #fff;
+    height: 27.5rem;
+    width: 94.6%;
+}
+.box-many .box-bg-form:last-child{
+    position: absolute;
+    background-color: #fff;
+    width: 94.6%;
+}
+.box-many .close-box-bf{
+    float: right;
+    margin-top: -40px;
+    font-size: 1.3rem;
+    color: #d6d6d6;
+    transition:all .2s;
+}
+.box-many .close-box-bf:hover{
+    color:#000;
+    cursor:pointer;
+}
+.box-many .open-box-bf{
+    float: right;
+    margin-top: -40px;
+    font-size: 1.3rem;
+    color: #d6d6d6;
+    transition: all .2s;
+}
+.box-many .open-box-bf:hover{
+    color:#000;
+    cursor:pointer;
+}
+
+.box-many .bd .box-fow {
+    height: 12.45rem;
+}
+
+.box-many{
+    height:30rem;
+}
+
+.hide-men {
+    z-index:-1;
+}
+
+.menu-box {
+    width: 0px;
+    position: fixed;
+}
+.result-msg {
+    width: 18rem;
+    height: 11rem;
+    border-radius: 20px;
+    position: fixed;
+    background-color: #ffffff;
+    z-index: 99;
+    right: 26rem;
+    border: solid 1px #c5c9ef;
+    top: -12rem;
+    box-shadow: 0px 0px 10px #c5c9ef;
+}
+.result-msg .close-msg{
+    float: right;
+    padding: 1rem;
+    padding-top: .5rem;
+    color: #a6aad2;
+    transition:.2s all;
+}
+.result-msg .close-msg:hover{
+    cursor:pointer;
+    color:#c5c9ef;
+}
+.result-msg p{
+    text-align: center;
+    margin-top: 4.5rem;
+    color:#a6aad2;
+}
+
+.error-msg {
+    border-color: #FF8AB4;
+    box-shadow: 0px 0px 10px #FF8AB4;
+}
+.error-msg p{
+    color: #d05983;
+}
+.error-msg .close-msg {
+    color: #d05983;
+}
+.error-msg .close-msg:hover{
+    color:#FF8AB4;
+}
+
+.index-img{
+    width:20rem;
+    height:20rem;
+}
+
+.box-many-main {
+    padding: 2rem;
+    border: solid 1px #9c9c9c;
+    border-radius: 20px;
+}
+.box-many-main .delete{
+    float:right;
+    padding:.5rem;
+    padding-right:0rem;
+    transition:all .2s;
+}
+.box-many-main .delete:hover{
+    cursor:pointer;
+    color:#9c9c9c;
+}
+.box-many-main a {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    display: inline-block;
+    color: #000;
+    transition:all .2s;
+}
+.box-many-main a:hover{
+    text-decoration:none;
+    color:#9c9c9c;
+}
+.box-many-main h2 {
+    font-size: 2rem;
+    margin-bottom:2rem;
+}
+.box-many-main img{
+    border-radius:20px;
+}
+.base-box-genre{
+    margin-top:2rem;
+}
+.box-many-main .box-genre {
+    padding: .1rem 1rem;
+    border: solid 1px #646ee2;
+    border-radius: 9px;
+    display: inline-block;
+    margin-left: .5rem;
+}
+.box-many-main .box-genre:first-child{
+    margin-left:0px;
+}
+
+.box-many-main hr {
+    margin: .5rem 1rem;
+}
+
+.tab-content .col-lg-4{
+    margin-top:5rem;
+}
+
+.nav-tabs{
+    border-bottom:none;
+}
+.nav-tabs li{
+    padding:1rem .7rem;
+}
+.nav-tabs li:first-child{
+    padding-left:0rem;
+}
+
+
+.Added {
+    background-color: #646ee2;
+    color:#fff;
+}
+.filter {
+    font-size: 1rem;
+    margin-left: 1rem;
+    transition:all .2s;
+}
+.filter:hover{
+    cursor:pointer;
+    color:#646ee2;
+}
+.filter-box {
+    position: absolute;
+    z-index: 9;
+    width: 25%;
+    border: solid 1px #9c9c9c;
+    border-radius: 20px;
+    background-color: #FFF;
+    padding: 0rem 3rem;
+    padding-top: 0rem;
+    box-shadow: 0px 0px 10px #c7c7c7;
+    margin-top: 2rem;
+    overflow: hidden;
+    height:0px;
+}
+
+.filter-box .col-12{
+    margin-top:2rem;
+}
+
+.filter-box .col-12:first-child{
+    margin-top:0rem;
+}
+
+.filter-box input{
+    width:100%;
+    border-style:none;
+    border-bottom:solid 1px #9c9c9c;
+}
+.filter-box .close-filter{
+    float:right;
+    transition:all .2s;
+}
+.filter-box .close-filter:hover{
+    color:#9c9c9c;
+    cursor:pointer;
+}
+
+.hide-228 {
+    display:none;
+}
+
+/*
+    Pagination
+*/
+
+.pagination {
+    margin: 0px auto;
+}
+.prev, .next {
+    color: #9c9c9c;
+    margin: 0rem 2rem;
+    border-radius: 10px;
+}
+.prev {
+    margin-right: 1rem;
+}
+.next {
+    margin-left: 1rem;
+}
+.start, .last {
+    margin: 0rem 1rem;
+}
+.pagination span {
+    float: left;
+    padding: .7rem 1rem;
+}
+.pagination-elems span {
+    color:#9c9c9c;
+}
+.pagination-elems .currect {
+    color: #646ee2;
+}
+.pagination span:hover{
+    cursor:pointer;
+}
+.box-2 {
+    display: inherit;
+    margin-top: 2rem;
+}

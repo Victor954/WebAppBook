@@ -1,0 +1,48 @@
+﻿@using WebAppBook.Base_Class;
+<div class="col-12 box-2">
+@if (Pagination.count > 1)
+{
+
+    int start = Pagination.startPoint + 1;
+
+
+    <div class="pagination">
+        <span class="prev">
+            prev
+        </span>
+        <span class="start">
+            1
+        </span>
+        <div class="pagination-elems">
+            @{
+                int count = ( Pagination.startPoint < start + 5) ?  start : start + 5;
+
+                for (int i = start; i <= count; i++)
+                {
+                    if (i == start)
+                    {
+                        <span class="currect">
+                            @i
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="pag-elem">
+                            @i
+                        </span>
+                    }
+
+                }
+            }
+        </div>
+        <span class="last">
+            @Pagination.count
+        </span>
+        <span class="next">
+            next
+        </span>
+    </div>
+}
+</div>
+
+

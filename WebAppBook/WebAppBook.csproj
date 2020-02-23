@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AA50477-88A5-49CE-803E-923EE6CBB77A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAppBook</RootNamespace>
+    <AssemblyName>WebAppBook</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44346</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Base_Class\CommandFilter.cs" />
+    <Compile Include="Base_Class\CommandCRUD.cs" />
+    <Compile Include="Base_Class\OperationCommand.cs" />
+    <Compile Include="Base_Class\ConcreteCRUD.cs" />
+    <Compile Include="Base_Class\FilterController.cs" />
+    <Compile Include="Base_Class\FilterTable.cs" />
+    <Compile Include="Base_Class\InterimTypes.cs" />
+    <Compile Include="Base_Class\TablesDataController.cs" />
+    <Compile Include="Controllers\Filter\AuthorSearchController.cs" />
+    <Compile Include="Controllers\Filter\BookSearchController.cs" />
+    <Compile Include="Controllers\Filter\PublisherSearchController.cs" />
+    <Compile Include="Controllers\MainTable\AuthorController.cs" />
+    <Compile Include="Controllers\MainTable\BookController.cs" />
+    <Compile Include="Controllers\MainTable\PublisherController.cs" />
+    <Compile Include="Controllers\SecondTable\GenreController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SecondTable\LanguagesController.cs" />
+    <Compile Include="Controllers\SecondTable\TranslatorController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookContext.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\ListCollection.cs" />
+    <Compile Include="Models\Publisher.cs" />
+    <Compile Include="Models\Translator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\DbBook.mdf" />
+    <Content Include="App_Data\DbBook_log.ldf">
+      <DependentUpon>DbBook.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\img_book_default.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Complite.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Script2.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\validation-form.js" />
+    <Content Include="Scripts\validator.js-master\build-browser.js" />
+    <Content Include="Scripts\validator.js-master\es\index.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\alpha.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\blacklist.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\contains.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\equals.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\escape.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isAfter.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isAlpha.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isAlphanumeric.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isAscii.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isBase32.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isBase64.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isBefore.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isBIC.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isBoolean.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isByteLength.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isCreditCard.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isCurrency.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isDataURI.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isDecimal.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isDivisibleBy.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isEmail.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isEmpty.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isFloat.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isFQDN.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isFullWidth.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isHalfWidth.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isHash.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isHexadecimal.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isHexColor.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isIdentityCard.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isIn.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isInt.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isIP.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isIPRange.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isISBN.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isISIN.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isISO31661Alpha2.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isISO31661Alpha3.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isISO8601.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isISRC.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isISSN.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isJSON.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isJWT.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isLatLong.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isLength.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isLowercase.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isMACAddress.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isMagnetURI.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isMD5.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isMimeType.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isMobilePhone.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isMongoId.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isMultibyte.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isNumeric.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isOctal.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isPort.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isPostalCode.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isRFC3339.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isSlug.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isSurrogatePair.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isUppercase.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isURL.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isUUID.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isVariableWidth.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\isWhitelisted.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\ltrim.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\matches.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\normalizeEmail.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\rtrim.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\stripLow.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\toBoolean.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\toDate.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\toFloat.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\toInt.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\trim.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\unescape.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\util\assertString.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\util\includes.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\util\merge.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\util\toString.js" />
+    <Content Include="Scripts\validator.js-master\es\lib\whitelist.js" />
+    <Content Include="Scripts\validator.js-master\index.js" />
+    <Content Include="Scripts\validator.js-master\lib\alpha.js" />
+    <Content Include="Scripts\validator.js-master\lib\blacklist.js" />
+    <Content Include="Scripts\validator.js-master\lib\contains.js" />
+    <Content Include="Scripts\validator.js-master\lib\equals.js" />
+    <Content Include="Scripts\validator.js-master\lib\escape.js" />
+    <Content Include="Scripts\validator.js-master\lib\isAfter.js" />
+    <Content Include="Scripts\validator.js-master\lib\isAlpha.js" />
+    <Content Include="Scripts\validator.js-master\lib\isAlphanumeric.js" />
+    <Content Include="Scripts\validator.js-master\lib\isAscii.js" />
+    <Content Include="Scripts\validator.js-master\lib\isBase32.js" />
+    <Content Include="Scripts\validator.js-master\lib\isBase64.js" />
+    <Content Include="Scripts\validator.js-master\lib\isBefore.js" />
+    <Content Include="Scripts\validator.js-master\lib\isBIC.js" />
+    <Content Include="Scripts\validator.js-master\lib\isBoolean.js" />
+    <Content Include="Scripts\validator.js-master\lib\isBtcAddress.js" />
+    <Content Include="Scripts\validator.js-master\lib\isByteLength.js" />
+    <Content Include="Scripts\validator.js-master\lib\isCreditCard.js" />
+    <Content Include="Scripts\validator.js-master\lib\isCurrency.js" />
+    <Content Include="Scripts\validator.js-master\lib\isDataURI.js" />
+    <Content Include="Scripts\validator.js-master\lib\isDecimal.js" />
+    <Content Include="Scripts\validator.js-master\lib\isDivisibleBy.js" />
+    <Content Include="Scripts\validator.js-master\lib\isEAN.js" />
+    <Content Include="Scripts\validator.js-master\lib\isEmail.js" />
+    <Content Include="Scripts\validator.js-master\lib\isEmpty.js" />
+    <Content Include="Scripts\validator.js-master\lib\isEthereumAddress.js" />
+    <Content Include="Scripts\validator.js-master\lib\isFloat.js" />
+    <Content Include="Scripts\validator.js-master\lib\isFQDN.js" />
+    <Content Include="Scripts\validator.js-master\lib\isFullWidth.js" />
+    <Content Include="Scripts\validator.js-master\lib\isHalfWidth.js" />
+    <Content Include="Scripts\validator.js-master\lib\isHash.js" />
+    <Content Include="Scripts\validator.js-master\lib\isHexadecimal.js" />
+    <Content Include="Scripts\validator.js-master\lib\isHexColor.js" />
+    <Content Include="Scripts\validator.js-master\lib\isIBAN.js" />
+    <Content Include="Scripts\validator.js-master\lib\isIdentityCard.js" />
+    <Content Include="Scripts\validator.js-master\lib\isIn.js" />
+    <Content Include="Scripts\validator.js-master\lib\isInt.js" />
+    <Content Include="Scripts\validator.js-master\lib\isIP.js" />
+    <Content Include="Scripts\validator.js-master\lib\isIPRange.js" />
+    <Content Include="Scripts\validator.js-master\lib\isISBN.js" />
+    <Content Include="Scripts\validator.js-master\lib\isISIN.js" />
+    <Content Include="Scripts\validator.js-master\lib\isISO31661Alpha2.js" />
+    <Content Include="Scripts\validator.js-master\lib\isISO31661Alpha3.js" />
+    <Content Include="Scripts\validator.js-master\lib\isISO8601.js" />
+    <Content Include="Scripts\validator.js-master\lib\isISRC.js" />
+    <Content Include="Scripts\validator.js-master\lib\isISSN.js" />
+    <Content Include="Scripts\validator.js-master\lib\isJSON.js" />
+    <Content Include="Scripts\validator.js-master\lib\isJWT.js" />
+    <Content Include="Scripts\validator.js-master\lib\isLatLong.js" />
+    <Content Include="Scripts\validator.js-master\lib\isLength.js" />
+    <Content Include="Scripts\validator.js-master\lib\isLowercase.js" />
+    <Content Include="Scripts\validator.js-master\lib\isMACAddress.js" />
+    <Content Include="Scripts\validator.js-master\lib\isMagnetURI.js" />
+    <Content Include="Scripts\validator.js-master\lib\isMD5.js" />
+    <Content Include="Scripts\validator.js-master\lib\isMimeType.js" />
+    <Content Include="Scripts\validator.js-master\lib\isMobilePhone.js" />
+    <Content Include="Scripts\validator.js-master\lib\isMongoId.js" />
+    <Content Include="Scripts\validator.js-master\lib\isMultibyte.js" />
+    <Content Include="Scripts\validator.js-master\lib\isNumeric.js" />
+    <Content Include="Scripts\validator.js-master\lib\isOctal.js" />
+    <Content Include="Scripts\validator.js-master\lib\isPassportNumber.js" />
+    <Content Include="Scripts\validator.js-master\lib\isPort.js" />
+    <Content Include="Scripts\validator.js-master\lib\isPostalCode.js" />
+    <Content Include="Scripts\validator.js-master\lib\isRFC3339.js" />
+    <Content Include="Scripts\validator.js-master\lib\isRgbColor.js" />
+    <Content Include="Scripts\validator.js-master\lib\isSemVer.js" />
+    <Content Include="Scripts\validator.js-master\lib\isSlug.js" />
+    <Content Include="Scripts\validator.js-master\lib\isSurrogatePair.js" />
+    <Content Include="Scripts\validator.js-master\lib\isUppercase.js" />
+    <Content Include="Scripts\validator.js-master\lib\isURL.js" />
+    <Content Include="Scripts\validator.js-master\lib\isUUID.js" />
+    <Content Include="Scripts\validator.js-master\lib\isVariableWidth.js" />
+    <Content Include="Scripts\validator.js-master\lib\isWhitelisted.js" />
+    <Content Include="Scripts\validator.js-master\lib\ltrim.js" />
+    <Content Include="Scripts\validator.js-master\lib\matches.js" />
+    <Content Include="Scripts\validator.js-master\lib\normalizeEmail.js" />
+    <Content Include="Scripts\validator.js-master\lib\rtrim.js" />
+    <Content Include="Scripts\validator.js-master\lib\stripLow.js" />
+    <Content Include="Scripts\validator.js-master\lib\toBoolean.js" />
+    <Content Include="Scripts\validator.js-master\lib\toDate.js" />
+    <Content Include="Scripts\validator.js-master\lib\toFloat.js" />
+    <Content Include="Scripts\validator.js-master\lib\toInt.js" />
+    <Content Include="Scripts\validator.js-master\lib\trim.js" />
+    <Content Include="Scripts\validator.js-master\lib\unescape.js" />
+    <Content Include="Scripts\validator.js-master\lib\util\assertString.js" />
+    <Content Include="Scripts\validator.js-master\lib\util\includes.js" />
+    <Content Include="Scripts\validator.js-master\lib\util\merge.js" />
+    <Content Include="Scripts\validator.js-master\lib\util\multilineRegex.js" />
+    <Content Include="Scripts\validator.js-master\lib\util\toString.js" />
+    <Content Include="Scripts\validator.js-master\lib\whitelist.js" />
+    <Content Include="Scripts\validator.js-master\src\index.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\alpha.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\blacklist.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\contains.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\equals.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\escape.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isAfter.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isAlpha.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isAlphanumeric.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isAscii.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isBase32.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isBase64.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isBefore.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isBIC.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isBoolean.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isBtcAddress.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isByteLength.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isCreditCard.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isCurrency.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isDataURI.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isDecimal.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isDivisibleBy.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isEAN.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isEmail.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isEmpty.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isEthereumAddress.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isFloat.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isFQDN.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isFullWidth.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isHalfWidth.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isHash.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isHexadecimal.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isHexColor.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isIBAN.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isIdentityCard.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isIn.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isInt.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isIP.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isIPRange.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isISBN.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isISIN.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isISO31661Alpha2.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isISO31661Alpha3.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isISO8601.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isISRC.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isISSN.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isJSON.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isJWT.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isLatLong.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isLength.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isLocale.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isLowercase.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isMACAddress.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isMagnetURI.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isMD5.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isMimeType.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isMobilePhone.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isMongoId.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isMultibyte.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isNumeric.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isOctal.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isPassportNumber.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isPort.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isPostalCode.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isRFC3339.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isRgbColor.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isSemVer.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isSlug.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isSurrogatePair.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isUppercase.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isURL.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isUUID.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isVariableWidth.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\isWhitelisted.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\ltrim.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\matches.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\normalizeEmail.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\rtrim.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\stripLow.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\toBoolean.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\toDate.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\toFloat.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\toInt.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\trim.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\unescape.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\util\assertString.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\util\includes.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\util\merge.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\util\multilineRegex.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\util\toString.js" />
+    <Content Include="Scripts\validator.js-master\src\lib\whitelist.js" />
+    <Content Include="Scripts\validator.js-master\test\client-side.js" />
+    <Content Include="Scripts\validator.js-master\test\exports.js" />
+    <Content Include="Scripts\validator.js-master\test\sanitizers.js" />
+    <Content Include="Scripts\validator.js-master\test\validators.js" />
+    <Content Include="Scripts\validator.js-master\validator.js" />
+    <Content Include="Scripts\validator.js-master\validator.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\Author\AddForm.cshtml" />
+    <Content Include="Views\Shared\FormGenre.cshtml" />
+    <Content Include="Views\Shared\EditMore.cshtml" />
+    <Content Include="Views\Publisher\AddForm.cshtml" />
+    <Content Include="Views\Book\AddForm.cshtml" />
+    <Content Include="Views\Author\EditForm.cshtml" />
+    <Content Include="Views\Book\EditForm.cshtml" />
+    <Content Include="Views\Author\Author.cshtml" />
+    <Content Include="Views\Book\Book.cshtml" />
+    <Content Include="Views\Shared\Pagination.cshtml" />
+    <Content Include="Views\Publisher\Publisher.cshtml" />
+    <Content Include="Views\Publisher\EditForm.cshtml" />
+    <Content Include="Scripts\validator.js-master\.babelrc" />
+    <Content Include="Scripts\validator.js-master\.eslintignore" />
+    <Content Include="Scripts\validator.js-master\.eslintrc.json" />
+    <Content Include="Scripts\validator.js-master\.github\FUNDING.yml" />
+    <Content Include="Scripts\validator.js-master\.gitignore" />
+    <Content Include="Scripts\validator.js-master\.nycrc" />
+    <Content Include="Scripts\validator.js-master\.travis.yml" />
+    <Content Include="Scripts\validator.js-master\bower.json" />
+    <Content Include="Scripts\validator.js-master\CHANGELOG.md" />
+    <Content Include="Scripts\validator.js-master\jsconfig.json" />
+    <Content Include="Scripts\validator.js-master\LICENSE" />
+    <Content Include="Scripts\validator.js-master\package.json" />
+    <Content Include="Scripts\validator.js-master\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62760</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44346/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

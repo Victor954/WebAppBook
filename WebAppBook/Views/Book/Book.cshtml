@@ -1,0 +1,20 @@
+﻿@using WebAppBook.Models
+@foreach (Book b in @ViewBag.Table)
+{
+    <div class="col-lg-4" id="@b.Id">
+        <div class="box-many-main">
+            <a href= "/Book/EditForm/@b.Id">Edit</a>
+            <span class="delete">X</span>
+            <hr />
+            <h2>@b.Name @b.Author.LastName</h2>
+            <img class="index-img" src="@b.ImgSrc" />
+            <div class="base-box-genre">
+                @foreach (Genre g in b.Genres)
+                {
+                    <span class="box-genre">@g.GenreName</span>
+                }
+            </div>
+        </div>
+    </div>
+}
+@Html.Partial("Pagination")

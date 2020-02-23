@@ -1,0 +1,98 @@
+﻿@using WebAppBook.Models;
+@{
+    ViewBag.Title = "Добавить издателя";
+}
+<div class="result-msg">
+    <span class="close-msg">X</span>
+    <p></p>
+</div>
+<div class="box-3">
+
+</div>
+<div class="row daun">
+    <div class="col-12"><h2 class="title-main">@ViewBag.Title</h2></div>
+    <div class="col-lg-6">
+        <div class="box-bg-form base-form">
+            @using (Ajax.BeginForm("AddTable", new AjaxOptions { OnFailure = "error", OnSuccess = "result" }))
+            {
+                <h2>Издатель</h2>
+                <label>Название</label>
+                <div class="input-group">
+                    <input type="text" name="Name" class="form-control" placeholder="Название издателя" />
+                </div>
+                <label>Информация об Издателе</label>
+                <div class="input-group">
+                    <textarea type="text" name="Description" class="form-control" placeholder="Информация об издателе"></textarea>
+                </div>
+                <input type="submit" id="zalu" name="" class="hide-submit" />
+            }
+            <button id="addAuthor" class="btn btn-form btn-btn">Добавить</button>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box-bg-form">
+
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="box-bg-form box-con" style="margin-top:5rem">
+                    <h2>Управление жанрами</h2>
+                    <div class="input-group form-genre">
+                        <input type="text" name="Genre" class="form-control add-genre-form-228" placeholder="Название жанра" />
+                        <span class="data-born">Поиск жанра</span>
+                    </div>
+
+                    <div class="box-fow2">
+                        <div class="input-group">
+                            <input type="text" class="form-control add-genre-form" placeholder="Название жанра" />
+                            <button class="btn btn-form add-genre-228">Добавить</button>
+                        </div>
+                        <div id="insert-request">
+                            <div class="box-fow">
+                                @if (ViewBag.Genre != null)
+                                {
+                                    foreach (Genre genre in ViewBag.Genre)
+                                    {
+                                        <div class="input-group input-group228" id="@genre.Id">
+                                            <input type="text" name="LastName" value="@genre.GenreName" class="form-control" placeholder="Название жанра" />
+                                            <button id="add" class="btn btn-form btn-edit btn-edit-call">С</button>
+                                            <button id="add" class="btn btn-form btn-delete-call">У</button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr />
+    <div class="col-lg-12">
+
+    </div>
+</div>
+<div class="box-6">
+
+</div>
+@Html.Partial("EditMore")
+<script src="~/Scripts/script2.js"></script>
+<script src="~/Scripts/validator.js-master/validator.min.js"></script>
+<script src="~/Scripts/validation-form.js"></script>
+
+<script>
+    $(document).ready(function () {
+        const Test1 = new ControllTable("Genre", ".box-con", ".con-base-1", "Выберите жанр", false);
+
+        const Test2 = new ControllTable("Languages", ".box-con2", null, null, false, Language);
+
+        const Test3 = new ControllTableTranslator(".box-con3", ".box-con2", null, false);
+        ValidationPublisher(result);
+    });
+</script>
